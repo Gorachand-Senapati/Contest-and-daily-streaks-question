@@ -1,3 +1,4 @@
+//231
 class Solution {
 public:
     bool isPowerOfTwo(int n) {

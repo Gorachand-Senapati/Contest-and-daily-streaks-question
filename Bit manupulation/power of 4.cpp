@@ -1,3 +1,4 @@
+//342
 class Solution {
 public:
     bool isPowerOfFour(int n) {
