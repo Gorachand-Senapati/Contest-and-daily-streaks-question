@@ -15,6 +15,6 @@ public:
             }
             if(valid)cnt++;//no broken Letters->cnt it
         }
-        return cnt;
+        return cnt;// TC= O(n+m) SC=O(m) n=text length m=brokenletters length
     }
-}; // TC= O(n+m) SC=O(m) n=text length m=brokenletters length
+}; 
