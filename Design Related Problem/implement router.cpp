@@ -1,15 +1,16 @@
 class Router {
 public:
 int maxSize;
- queue<string>q;
- unordered_map<int ,vector<int>>destTimeMap;//D-> {t1,t2,t3} time stamp
- unordered_map<string,vector<int>>packetStore;//key{s,d,t}
-    Router(int memoryLimit) {
+ queue<string>q;//fifo
+ unordered_map<int ,vector<int>>destTimeMap;//D-> {t1,t2,t3} time stamp; //key=int(dest) val= list of timestamps int
+ unordered_map<string,vector<int>>packetStore;//key{s_d_t}, value= [2, 5, 90]
+
+    Router(int memoryLimit) {//constructor
         maxSize= memoryLimit;
     }
     string makeKey(int S, int D, int T){
    return to_string(S) + "_"+ to_string(D) + "_"+ to_string(T);//joinig all
-    }
+    }//Without a separator, different combinations of numbers could produce the same string.
     
     bool addPacket(int source, int destination, int timestamp) {
         string key= makeKey(source, destination, timestamp);
