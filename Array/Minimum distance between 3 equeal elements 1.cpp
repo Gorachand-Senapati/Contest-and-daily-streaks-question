@@ -77,6 +77,6 @@ public:
         }
 
         return found ? dist : -1;
-    }
+    }//TC= O(n2) SC= O(n)
 };
 // n<=10^5 so here suppor O(nlogn) and best O(n2) not use 
