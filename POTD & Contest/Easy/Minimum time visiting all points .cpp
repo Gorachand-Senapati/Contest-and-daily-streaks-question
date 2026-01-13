@@ -1,0 +1,19 @@
+class Solution {
+public:
+    int minTimeToVisitAllPoints(vector<vector<int>>& points) {
+        int steps =0;
+        int n = points.size();
+        for(int i=0;i<n-1;i++){
+            //need find dist from i to i+1, i+1 to i+2 to n-1 
+            int x1 = points[i][0];
+            int y1 = points[i][1];
+            int x2 = points[i+1][0];
+            int y2 = points[i+1][1];
+            //diagonally move first
+            int dx = abs(x2-x1);
+            int dy = abs(y2-y1);
+            steps+= min(dx,dy)+ abs(dy-dx);
+        }
+        return steps;
+    }
+};
