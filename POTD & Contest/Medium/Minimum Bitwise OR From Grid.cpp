@@ -28,14 +28,12 @@ public:
                     break;
                 }
             }
-
             if (possible) {
                 forbidden = testForbidden;   // we can keep this bit 0
             } else {
                 ans |= (1 << bit);           // must set this bit
             }
         }
-
         return ans;
     }
 };
